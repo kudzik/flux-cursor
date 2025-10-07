@@ -1,0 +1,43 @@
+# Python / venv
+.venv/
+ENV/
+env/
+venv/
+
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# OS/Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python packaging
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Hugging Face / Diffusers cache (lokalnie)
+# Uwaga: w repo i tak nie trafią ścieżki absolutne; to informacyjne
+.cache/
+.huggingface/
+
+# Wygenerowane obrazy
+*.png
+*.jpg
+*.jpeg
+
+# Checkpoints/model files
+*.safetensors
+*.ckpt
+
+# Logs
+*.log
+
+# Python dotenv
+.env

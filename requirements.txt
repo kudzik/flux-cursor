@@ -1,0 +1,21 @@
+# Kluczowe biblioteki do uruchomienia FLUX.1-schnell lokalnie (CUDA)
+# Uwaga: zainstaluj PyTorch z odpowiednim indeksem CUDA (szczegóły w README)
+
+# Runtime
+diffusers==0.35.1
+transformers==4.45.2
+accelerate==1.10.1
+huggingface-hub==0.35.3
+safetensors==0.6.2
+sentencepiece==0.2.1
+protobuf==6.32.1
+
+# Obraz/numeryka (zgodne z torch 2.6.0)
+Pillow==11.0.0
+numpy==2.1.2
+
+# (Opcjonalne, ale powszechne w ekosystemie HF)
+requests>=2.31.0
+tqdm>=4.66.0
+
+# Uwaga: PyTorch instaluj osobno zgodnie z GPU/CUDA (patrz README)
