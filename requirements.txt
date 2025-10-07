@@ -1,5 +1,8 @@
 # Kluczowe biblioteki do uruchomienia FLUX.1-schnell lokalnie (CUDA)
-# Uwaga: zainstaluj PyTorch z odpowiednim indeksem CUDA (szczegóły w README)
+# Uwaga: PyTorch instaluj z plików wariantowych:
+#  - GPU (CUDA 12.1): pip install -r requirements-cu121.txt
+#  - CPU:            pip install -r requirements-cpu.txt
+# Szczegóły i inne warianty w README.
 
 # Runtime
 diffusers==0.35.1
@@ -18,4 +21,4 @@ numpy==2.1.2
 requests>=2.31.0
 tqdm>=4.66.0
 
-# Uwaga: PyTorch instaluj osobno zgodnie z GPU/CUDA (patrz README)
+# Torch/torchvision/torchaudio są pinowane w plikach wariantowych (GPU/CPU)

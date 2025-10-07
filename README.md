@@ -17,11 +17,17 @@ python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
-### 2) PyTorch z CUDA
-Zainstaluj PyTorch dopasowany do Twojej wersji CUDA (dla CUDA 12.4):
-```powershell
-pip install --index-url https://download.pytorch.org/whl/cu124 torch torchvision torchaudio
-```
+### 2) Wybór wariantu PyTorch (GPU/CPU)
+Wybierz jedną z opcji:
+
+- GPU (CUDA 12.1, rekomendowane dla RTX):
+  ```powershell
+  pip install -r requirements-cu121.txt
+  ```
+- CPU (bez CUDA, wolniejsze generowanie):
+  ```powershell
+  pip install -r requirements-cpu.txt
+  ```
 
 ### 3) Zależności projektu
 ```powershell
@@ -50,6 +56,13 @@ Domyślnie skrypt generuje obraz w proporcjach 4:5 (dobranych do wielokrotności
 - Konflikt `offload_state_dict`: używamy `transformers==4.45.2` i `diffusers==0.35.1` (zob. `requirements.txt`).
 - Tokenizer T5: doinstaluj `sentencepiece` oraz `protobuf` (są w `requirements.txt`).
 - OOM CUDA: zmniejsz rozdzielczość lub włącz `enable_model_cpu_offload()`.
+
+## Wersje i zgodność
+- Torch: `2.6.0` (GPU CUDA 12.1 i CPU warianty w osobnych plikach wymagań)
+- TorchVision: `0.21.0`, Torchaudio: `2.6.0`
+- Diffusers: `0.35.1`, Transformers: `4.45.2`
+
+Na innych wersjach CUDA (np. 12.4) zadziała po zmianie indeksu i wersji torch – przygotowaliśmy gotowe pliki dla CUDA 12.1 i CPU, bo w tych konfiguracjach testowo działa akceleracja GPU bez konfliktów.
 
 ## Licencja modelu
 Model `FLUX.1-schnell` jest dostępny na licencji Apache-2.0 – szczegóły na stronie modelu.
